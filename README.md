@@ -1,62 +1,83 @@
-# Gentoo BSPWM Dotfiles (Terracenter)
+# 🌌 Gentoo BSPWM Dotfiles
 
-Este repositorio contiene las configuraciones personales para un entorno de escritorio en **Gentoo Linux** utilizando **bspwm** como gestor de ventanas.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/terracenter/gentoo-bspwm-configs/main/.config/neofetch/logo.png" alt="Gentoo Logo" width="150" onerror="this.style.display='none'">
+</p>
 
-## 🛠️ Componentes Principales
-- **WM:** `bspwm` (Binary Space Partitioning Window Manager).
-- **Hotkeys:** `sxhkd` (Simple X Hotkey Daemon).
-- **Barra:** `polybar`.
-- **Terminal File Manager:** `ranger`.
-- **Sistema de Audio:** `pipewire` (gestión con `wpctl`).
-- **Monitoreo:** `btop`.
+Un entorno de escritorio minimalista, eficiente y altamente estético basado en **Gentoo Linux**. Este repositorio centraliza mis archivos de configuración para una experiencia de usuario optimizada.
 
-## 📂 Estructura del Repositorio
-\`\`\`text
-.
-├── .config/
-│   ├── bspwm/       # Configuración del gestor de ventanas
-│   ├── sxhkd/       # Atajos de teclado
-│   ├── polybar/     # Configuración de la barra superior
-│   ├── ranger/      # Configuración del explorador de archivos
-│   ├── btop/        # Temas y configuración de btop
-│   └── neofetch/    # Configuración de info del sistema
-└── GEMINI.md        # Reglas de mantenimiento del proyecto
-\`\`\`
+---
 
-## 🚀 Instalación y Activación
+## 🛠️ Stack Tecnológico
 
-### 1. Clonar el repositorio
-Si aún no lo tienes:
+| Componente | Herramienta | Descripción |
+| :--- | :--- | :--- |
+| **Window Manager** | `bspwm` | Gestión de ventanas por mosaico binario. |
+| **Hotkeys** | `sxhkd` | Demonio de atajos de teclado simple y potente. |
+| **Status Bar** | `polybar` | Barra de estado modular y personalizable. |
+| **File Manager** | `ranger` | Explorador de archivos basado en Vim para la terminal. |
+| **Audio** | `Pipewire` | Servidor de audio moderno (control con `wpctl`). |
+| **Monitor** | `btop` | Monitor de recursos del sistema con interfaz gráfica. |
+
+---
+
+## 📂 Estructura del Ecosistema
+
+```bash
+~/.config/
+├── 🪟 bspwm/       # Reglas de ventanas y comportamiento del WM
+├── ⌨️ sxhkd/       # La "mente" de tus atajos de teclado
+├── 📊 polybar/     # Diseño, módulos y scripts de la barra
+├── 📂 ranger/      # Atajos y previsualizaciones de archivos
+├── 🌡️ btop/        # Configuración estética del monitor
+└── 🖼️ neofetch/    # Personalización de la info del sistema
+```
+
+---
+
+## 🚀 Instalación Rápida
+
+### 1️⃣ Clonar el cerebro
 \`\`\`bash
 git clone git@github.com:terracenter/gentoo-bspwm-configs.git ~/gentoo-bspwm-configs
 \`\`\`
 
-### 2. Desplegar configuraciones
-Siguiendo la **regla de oro** del proyecto, los archivos deben copiarse, no enlazarse simbólicamente:
+### 2️⃣ Desplegar (El Método Seguro)
+> ⚠️ **IMPORTANTE:** Este proyecto prohíbe el uso de *symlinks*. Copiamos para mantener la integridad de `~/.config`.
+
 \`\`\`bash
-cp -r ~/gentoo-bspwm-configs/.config/* ~/.config/
+cp -rv ~/gentoo-bspwm-configs/.config/* ~/.config/
 \`\`\`
 
-### 3. Recargar configuraciones
-- **sxhkd:** Para aplicar cambios en los atajos sin reiniciar sesión:
-  \`\`\`bash
-  pkill -USR1 -x sxhkd
-  \`\`\`
-- **bspwm:** Reiniciar el WM (normalmente \`Super + Alt + r\`).
-- **polybar:** Ejecutar el script de lanzamiento:
-  \`\`\`bash
-  ~/.config/polybar/launch.sh
-  \`\`\`
+### 3️⃣ Aplicar cambios
+*   **Refrescar Teclado:** `pkill -USR1 -x sxhkd`
+*   **Reiniciar WM:** `Super` + `Alt` + `r`
+*   **Lanzar Barra:** `~/.config/polybar/launch.sh`
 
-## ⚠️ Regla de Oro (Mantenimiento)
-**PROHIBIDOS LOS SYMLINKS:** Para mover archivos entre la carpeta de configuración y el backup, usar siempre \`cp\`. Los archivos en \`~/.config\` son siempre la fuente de verdad.
+---
 
-## 📝 Actualizar el Backup
-Para subir cambios recientes desde tu sistema al repositorio:
-\`\`\`bash
-cp -r ~/.config/<carpeta> ~/gentoo-bspwm-configs/.config/
-cd ~/gentoo-bspwm-configs
-git add .
-git commit -m "Update: descripción de los cambios"
-git push
-\`\`\`
+## ⌨️ Atajos Imprescindibles
+
+*   `Super + Enter` ⮕ Abrir Terminal
+*   `Super + d` ⮕ Lanzador de aplicaciones
+*   `Super + Alt + q` ⮕ Cerrar ventana enfocada
+*   `Super + {1-9}` ⮕ Cambiar de espacio de trabajo
+
+---
+
+## 🛡️ Reglas de Mantenimiento
+
+Para asegurar que el repositorio siempre esté sincronizado con tu sistema real:
+
+1. **Fuente de Verdad:** `~/.config` es el lugar sagrado.
+2. **Actualizar Backup:**
+   \`\`\`bash
+   cp -r ~/.config/<carpeta> ~/gentoo-bspwm-configs/.config/
+   cd ~/gentoo-bspwm-configs && git add . && git commit -m "feat: mejoras estéticas" && git push
+   \`\`\`
+
+---
+
+<p align="center">
+  Configurado con ❤️ por <b>Terracenter</b>
+</p>
