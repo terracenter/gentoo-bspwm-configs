@@ -135,3 +135,15 @@ XF86AudioLowerVolume
 # Mute/Unmute
 XF86AudioMute
 	wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+#
+# Brightness Control
+#
+
+# Raise brightness
+XF86MonBrightnessUp
+	~/.local/bin/backlight_notify.sh up
+
+# Lower brightness
+XF86MonBrightnessDown
+	~/.local/bin/backlight_notify.sh down
